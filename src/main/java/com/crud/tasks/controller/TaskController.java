@@ -10,13 +10,18 @@ import java.util.List;
 
 import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1/task")
 public class TaskController {
+    private final DbService service;
+    private final TaskMapper taskMapper;
+
     @Autowired
-    private DbService service;
-    @Autowired
-    private TaskMapper taskMapper;
+    public TaskController(DbService service, TaskMapper taskMapper) {
+        this.service = service;
+        this.taskMapper = taskMapper;
+    }
 
     @RequestMapping(method = RequestMethod.GET, value = "getTasks")
     public List<TaskDto> getTasks() {
