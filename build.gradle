@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.4.0-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
-	id 'war'
+	//id 'war'
 }
 
 war {
@@ -30,9 +30,9 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('mysql:mysql-connector-java')
-
-	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+	//compile('mysql:mysql-connector-java')
+	compile('org.postgresql-connector-java')
+	//providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
 
 test {
