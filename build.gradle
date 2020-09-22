@@ -41,7 +41,3 @@ dependencies {
 
 	compile('org.springframework.boot:spring-boot-starter-mail:2.3.3.RELEASE')
 }
-
-test {
-	useJUnitPlatform()
-}
