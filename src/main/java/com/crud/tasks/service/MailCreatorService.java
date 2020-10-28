@@ -2,7 +2,6 @@ package com.crud.tasks.service;
 
 import com.crud.tasks.config.AdminConfig;
 import com.crud.tasks.config.CompanyConfig;
-import com.crud.tasks.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -42,6 +41,10 @@ public class MailCreatorService {
         context.setVariable("is_friend", false);
         context.setVariable("admin_config", adminConfig);
         context.setVariable("application_functionality", functionality);
+
+        context.setVariable("button_name", "Button name");
+        context.setVariable("goodbye_message", "Have a nice day");
+
         return templateEngine.process("mail/created-trello-card-mail", context);
     }
 }
